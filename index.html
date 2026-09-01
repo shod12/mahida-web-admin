@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f3149">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mahida Admin">
+
+  <title>Mahida Admin</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <main class="app-shell" id="appShell">
+    <div class="shell-loading" id="shellLoading" role="status" aria-live="polite">
+      <img class="shell-logo" src="assets/icon-192.png" alt="Logo Mahida">
+      <div class="shell-spinner" aria-hidden="true"></div>
+      <strong>Membuka Mahida Admin</strong>
+      <span>Menyiapkan aplikasi...</span>
+    </div>
+
+    <div class="shell-error hidden" id="shellError" role="alert">
+      <img class="shell-logo" src="assets/icon-192.png" alt="Logo Mahida">
+      <h1>Mahida Admin belum dapat dibuka</h1>
+      <p>Pastikan perangkat terhubung ke internet lalu coba lagi.</p>
+      <div class="shell-error-actions">
+        <button type="button" class="primary-button" id="retryButton">Coba Lagi</button>
+        <a class="secondary-button" id="openBrowserLink" href="https://script.google.com/macros/s/AKfycbzzm1txakGC5DQTidoQr3UdPNi4k9y8YDn9UNokKXhmJ6Lj9xyPseKd2kaJ2nL_qU2KEw/exec" target="_blank" rel="noopener">Buka di Browser</a>
+      </div>
+    </div>
+
+    <iframe
+      id="mahidaAdminFrame"
+      class="admin-frame"
+      title="Koperasi Mahida Admin"
+      src="https://script.google.com/macros/s/AKfycbzzm1txakGC5DQTidoQr3UdPNi4k9y8YDn9UNokKXhmJ6Lj9xyPseKd2kaJ2nL_qU2KEw/exec?pwa=1"
+      allow="camera; microphone; clipboard-read; clipboard-write; fullscreen"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+
+    <button type="button" class="install-button hidden" id="installButton" aria-label="Instal Mahida Admin">
+      Instal Mahida Admin
+    </button>
+  </main>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
