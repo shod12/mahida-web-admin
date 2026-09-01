@@ -1,14 +1,12 @@
 'use strict';
 
-const MAHIDA_ADMIN_SHELL_CACHE = 'mahida-admin-shell-v1';
+const MAHIDA_ADMIN_SHELL_CACHE = 'mahida-admin-shell-v2';
 const MAHIDA_ADMIN_SHELL = [
   './',
   './index.html',
   './styles.css?v=1',
   './app.js?v=1',
-  './manifest.webmanifest',
-  './assets/icon-192.png',
-  './assets/icon-512.png'
+  './manifest.webmanifest'
 ];
 
 self.addEventListener('install', function (event) {
@@ -51,7 +49,7 @@ self.addEventListener('fetch', function (event) {
 
   const url = new URL(request.url);
 
-  /* Jangan pernah cache/intercept Apps Script atau origin eksternal. */
+  /* Apps Script, QR scanner, logo eksternal, dan origin lain tidak disentuh SW. */
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === 'navigate') {
